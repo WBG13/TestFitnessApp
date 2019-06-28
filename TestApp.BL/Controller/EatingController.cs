@@ -9,7 +9,7 @@ using TestApp.BL.Model;
 
 namespace TestApp.BL.Controller
 {
-    public class EatingController : ControllerBase
+    public class EatingController : ControllerBase<Eating>
     {
         private const string FOOD_FILE_NAME = "food.dat";
         private const string EATING_FILE_NAME = "eating.dat";
@@ -57,12 +57,12 @@ namespace TestApp.BL.Controller
 
         private Eating GetEating()
         {
-            return Load<Eating>(EATING_FILE_NAME) ?? new Eating(user);
+            return Load().First();
         }
 
         private List<Food> GetAllFoods()
         {
-            return Load<List<Food>>(FOOD_FILE_NAME) ?? new List<Food>();
+            return Load().First();
             //var formatter = new BinaryFormatter();
             //try
             //{
@@ -75,23 +75,24 @@ namespace TestApp.BL.Controller
             //                return food; //(List<User>)formatter.Deserialize(fs);
             //            }
             //            else
-             //           {
-             //               return new List<Food>();
+            //           {
+            //               return new List<Food>();
             //            }
             //        }
-             //       catch (System.Runtime.Serialization.SerializationException e)
+            //       catch (System.Runtime.Serialization.SerializationException e)
             //        {
             //            return new List<Food>();
-           //         }
+            //         }
             //    }
-           // }
-          //  catch (System.IO.FileNotFoundException e) { return new List<Food>(); }
+            // }
+            //  catch (System.IO.FileNotFoundException e) { return new List<Food>(); }
         }
 
         private void Save()
         {
-            Save(FOOD_FILE_NAME, Foods);
-            Save(EATING_FILE_NAME, Eating);
+            Save();
+            //Save(FOOD_FILE_NAME, Foods);
+            //Save(EATING_FILE_NAME, Eating);
         }
     }
 }

@@ -5,7 +5,7 @@ using TestApp.BL.Model;
 
 namespace TestApp.BL.Controller
 {
-    public class ExerciseController : ControllerBase
+    public class ExerciseController : ControllerBase <Exercise>
     {
         private readonly User user;
         private const string EXERCISE_FILE_NAME = "exercise.dat"; 

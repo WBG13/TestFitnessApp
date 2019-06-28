@@ -12,7 +12,7 @@ namespace TestApp.BL.Controller
     /// <summary>
     /// Контроллер пользователя.
     /// </summary>
-    public class UserController : ControllerBase
+    public class UserController : ControllerBase<User>
     {
         private const string USERS_FILE_NAME = "users.dat";
         /// <summary>
@@ -70,7 +70,8 @@ namespace TestApp.BL.Controller
         /// <returns>Список пользователей.</returns>
         private List<User> GetUsersDate()
         {
-            return Load<List<User>>(USERS_FILE_NAME) ?? new List<User>();
+            return Load();
+            //return Load<List<User>>(USERS_FILE_NAME) ?? new List<User>();
 
             //var formatter = new BinaryFormatter();
 
@@ -116,7 +117,8 @@ namespace TestApp.BL.Controller
         /// </summary>
         public void Save()
         {
-            Save(USERS_FILE_NAME, Users);
+            //Save(USERS_FILE_NAME, Users);
+
             //var formatter = new BinaryFormatter();
 
             //using (var fs = new FileStream("users.dat", FileMode.OpenOrCreate))

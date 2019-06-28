@@ -8,42 +8,18 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace TestApp.BL.Controller
 {
-    public abstract class ControllerBase
+    public abstract class ControllerBase <T> where T: class
     {
-        protected void Save<T>(string fileName, T item)//List<T> item)
+        protected IDataSaver<T> manager = new SerializeDataSaver<T>();
+
+        protected void Save(T item)
         {
-            var formatter = new BinaryFormatter();
-            using (Stream fs = new FileStream(fileName, FileMode.OpenOrCreate))//FileMode.Create, FileAccess.Write))
-            {
-                formatter.Serialize(fs, item);
-            }
+            manager.Save(item);
         }
 
-        protected T Load <T>(string fileName)
+        protected List<T> Load()
         {
-            var formatter = new BinaryFormatter();
-            try
-            {
-                using (var fs = new FileStream(fileName, FileMode.OpenOrCreate))//FileMode.Open, FileAccess.Read))//
-                {
-                    try
-                    {
-                        if (formatter.Deserialize(fs) is T list) //проблема дисереализации данных, необходим корректный вывод List<User> users
-                        {
-                            return list; //(List<User>)formatter.Deserialize(fs);
-                        }
-                        else
-                        {
-                            return default(T);
-                        }
-                    }
-                    catch (System.Runtime.Serialization.SerializationException)
-                    {
-                        return default(T);
-                    }
-                }
-            }
-            catch (System.IO.FileNotFoundException) { return default(T); }
+            return manager.Load();
         }
     }
 }

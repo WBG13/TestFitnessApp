@@ -12,11 +12,24 @@ namespace TestApp.BL.Model
     /// </summary>
     public class Eating
     {
-        public DateTime Moment { get; }
-
-        public Dictionary<Food, double> Foods { get; }
-
-        public User User { get; }
+        #region Свойства
+        /// <summary>
+        /// Идентификатор.
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
+        /// Время приема пищи.
+        /// </summary>
+        public DateTime Moment { get; set; }
+        /// <summary>
+        /// Список употребляемой еды.
+        /// </summary>
+        public Dictionary<Food, double> Foods { get; set; }
+        /// <summary>
+        /// Пользователь.
+        /// </summary>
+        public virtual User User { get; set; }
+        #endregion
 
         public Eating(User user)
         {

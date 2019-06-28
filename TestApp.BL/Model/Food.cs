@@ -9,28 +9,32 @@ namespace TestApp.BL.Model
     [Serializable]
     public class Food
     {
-        public string Name { get; }
-
+        #region Свойства
+        /// <summary>
+        /// Идентификатор.
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
+        /// Имя.
+        /// </summary>
+        public string Name { get; set; }
         /// <summary>
         /// Белки.
         /// </summary>
-        public double Proteins { get; }
-
+        public double Proteins { get; set; }
         /// <summary>
         /// Жиры.
         /// </summary>
-        public double Fats { get; }
-
+        public double Fats { get; set; }
         /// <summary>
         /// Углеводы.
         /// </summary>
-        public double Carbogydrates { get; }
-
+        public double Carbogydrates { get; set; }
         /// <summary>
         /// Калории за 100 г. продукта.
         /// </summary>
-        public double Calories { get; }
-
+        public double Calories { get; set; }
+        #endregion
         //private double CaloriesForOneGramm { get { return Calories / 100.0; } } // Приватное свойство
         //private double ProteinsForOneGramm { get { return Proteins / 100.0; } } // Приватное свойство
         //private double FatsForOneGramm { get { return Fats / 100.0; } } // Приватное свойство
