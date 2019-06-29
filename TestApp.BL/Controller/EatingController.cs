@@ -27,18 +27,6 @@ namespace TestApp.BL.Controller
             Eating = GetEating();
         }
 
-        //public bool Add(string foodName, double weight)
-        //{
-        //    var food = Foods.SingleOrDefault(n => n.Name == foodName);
-        //    if (Eating != null)
-        //    {
-        //        Eating.Add(food, weight);
-        //        Save();
-        //        return true;
-        //    }
-        //    return false;
-        //}
-
         public void Add(Food food, double weight)
         {
             var product = Foods.SingleOrDefault(n => n.Name == food.ToString());

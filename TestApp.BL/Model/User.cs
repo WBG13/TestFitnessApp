@@ -34,10 +34,6 @@ namespace TestApp.BL.Model
         /// </summary>
         public double Height { get; set; }
 
-        //DateTime nowDate = DateTime.Today;
-        //int age = nowDate.Year - BirthDate.Year;
-        //if(BirthDate > nowDate.AddYears(-age)) age--;
-
         public int Age { get { return DateTime.Now.Year - BirthDate.Year; } }
         #endregion
         /// <summary>

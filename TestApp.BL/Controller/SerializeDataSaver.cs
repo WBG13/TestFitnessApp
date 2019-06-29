@@ -10,7 +10,7 @@ namespace TestApp.BL.Controller
         {
             var fileName = typeof(T) + ".dat";
             var formatter = new BinaryFormatter();
-            using (Stream fs = new FileStream(fileName, FileMode.OpenOrCreate))//FileMode.Create, FileAccess.Write))
+            using (Stream fs = new FileStream(fileName, FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fs, item);
             }
@@ -22,13 +22,13 @@ namespace TestApp.BL.Controller
             var fileName = typeof(T) + ".dat";
             try
             {
-                using (var fs = new FileStream(fileName, FileMode.OpenOrCreate))//FileMode.Open, FileAccess.Read))//
+                using (var fs = new FileStream(fileName, FileMode.OpenOrCreate))
                 {
                     try
                     {
                         if (formatter.Deserialize(fs) is List<T> list) //проблема дисереализации данных, необходим корректный вывод List<User> users
                         {
-                            return list; //(List<User>)formatter.Deserialize(fs);
+                            return list;
                         }
                         else
                         {

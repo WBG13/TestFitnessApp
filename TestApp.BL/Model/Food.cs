@@ -35,10 +35,6 @@ namespace TestApp.BL.Model
         /// </summary>
         public double Calories { get; set; }
         #endregion
-        //private double CaloriesForOneGramm { get { return Calories / 100.0; } } // Приватное свойство
-        //private double ProteinsForOneGramm { get { return Proteins / 100.0; } } // Приватное свойство
-        //private double FatsForOneGramm { get { return Fats / 100.0; } } // Приватное свойство
-        //private double CarbogydratesForOneGramm { get { return Carbogydrates / 100.0; } } // Приватное свойство
 
         public Food(string name) : this (name, 0, 0, 0, 0){}
 

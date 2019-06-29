@@ -37,8 +37,7 @@ namespace TestApp.BL.Model
         #endregion
         public Exercise(DateTime start, DateTime finish, Activity activity, User user)
         {
-            //Check
-
+            //TODO Check
             Start = start;
             Finish = finish;
             Activity = activity;
