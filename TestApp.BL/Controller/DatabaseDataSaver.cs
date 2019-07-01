@@ -5,22 +5,22 @@ using System.Collections.Generic;
 
 namespace TestApp.BL.Controller
 {
-    class DatabaseDataSaver<T> : IDataSaver<T> where T : class
+    class DatabaseDataSaver<T> : IDataSaver
     {
-        public List<T> Load()
+        public List<T> Load<T>() where T : class
         {
             using (var db = new FitnessContext())
             {
-                var result = db.Set<T>().Where(l => true).ToList();
+                var result = db.Set<T>().Where(t => true).ToList();
                 return result;
             }
         }
 
-        public void Save(T item)
+        public void Save<T>(List<T> item) where T : class
         {
             using (var db = new FitnessContext())
             {
-                db.Set<T>().Add(item);
+                db.Set<T>().AddRange(item);
                 db.SaveChanges();
             }
         }

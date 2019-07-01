@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TestApp.BL.Model
 {
@@ -15,10 +16,17 @@ namespace TestApp.BL.Model
         /// </summary>
         public string Name { get; set; }
         /// <summary>
+        /// Список упражнений.
+        /// </summary>
+        public virtual ICollection<Exercise> Exercises { get; set; }
+        /// <summary>
         /// Количество сжигаемых калорий в минуту.
         /// </summary>
         public double CaloriesPerMinute { get; set; }
         #endregion
+
+        public Activity() { }
+
         public Activity(string name, double caloriesPerMinute)
         {
             Name = name;

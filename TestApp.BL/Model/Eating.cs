@@ -30,6 +30,7 @@ namespace TestApp.BL.Model
         /// </summary>
         public virtual User User { get; set; }
         #endregion
+        public Eating() { }
 
         public Eating(User user)
         {

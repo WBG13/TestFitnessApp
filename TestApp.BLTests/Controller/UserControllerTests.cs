@@ -23,7 +23,7 @@ namespace TestApp.BL.Controller.Tests
             var controller = new UserController(userName);
 
             //Act
-            controller.SetNewUserData(userName, gender, birthDate, weight, height);
+            controller.SetNewUserData(gender, birthDate, weight, height);
             var controller2 = new UserController(userName);
 
             //Assert

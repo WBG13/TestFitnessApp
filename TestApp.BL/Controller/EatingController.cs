@@ -9,11 +9,13 @@ using TestApp.BL.Model;
 
 namespace TestApp.BL.Controller
 {
-    public class EatingController : ControllerBase<Eating>
+    public class EatingController : ControllerBase
     {
-        private const string FOOD_FILE_NAME = "food.dat";
-        private const string EATING_FILE_NAME = "eating.dat";
+        //private const string FOOD_FILE_NAME = "food.dat";
+        //private const string EATING_FILE_NAME = "eating.dat";
+
         private readonly User user;
+
         public List<Food> Foods { get; }
 
         public Eating Eating { get; }
@@ -45,12 +47,12 @@ namespace TestApp.BL.Controller
 
         private Eating GetEating()
         {
-            return Load().First();
+            return Load<Eating>().FirstOrDefault() ?? new Eating(user);
         }
 
         private List<Food> GetAllFoods()
         {
-            return Load().First();
+            return Load<Food>() ?? new List<Food>();
             //var formatter = new BinaryFormatter();
             //try
             //{
@@ -78,7 +80,8 @@ namespace TestApp.BL.Controller
 
         private void Save()
         {
-            Save();
+            Save(Foods);
+            Save(new List<Eating>() { Eating});
             //Save(FOOD_FILE_NAME, Foods);
             //Save(EATING_FILE_NAME, Eating);
         }

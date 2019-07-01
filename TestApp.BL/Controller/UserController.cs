@@ -12,9 +12,9 @@ namespace TestApp.BL.Controller
     /// <summary>
     /// Контроллер пользователя.
     /// </summary>
-    public class UserController : ControllerBase<User>
+    public class UserController : ControllerBase
     {
-        private const string USERS_FILE_NAME = "users.dat";
+        //private const string USERS_FILE_NAME = "users.dat";
         /// <summary>
         /// Пользователи приложения.
         /// </summary>
@@ -55,10 +55,10 @@ namespace TestApp.BL.Controller
         /// <returns>Список пользователей.</returns>
         private List<User> GetUsersDate()
         {
-            return Load();
+            return Load<User>() ?? new List<User>();
         }
 
-        public void SetNewUserData(string userName, string genderName, DateTime birthDate, double weight = 1, double height = 1)
+        public void SetNewUserData(string genderName, DateTime birthDate, double weight = 1, double height = 1)
         {
             //TODO: Проверка 
             CurrentUser.Gender = new Gender(genderName);
@@ -74,7 +74,7 @@ namespace TestApp.BL.Controller
         /// </summary>
         public void Save()
         {
-            //Save(USERS_FILE_NAME, Users);
+            Save(Users);
         }
     }
 }

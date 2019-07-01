@@ -26,6 +26,8 @@ namespace TestApp.BL.Model
         ///Создать новый пол.
         ///</summary>
         ///<param name="name">Имя пола</param>
+        public Gender() { }
+
         public Gender(string name)
         {
             if (string.IsNullOrWhiteSpace(name))

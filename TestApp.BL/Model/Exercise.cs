@@ -35,6 +35,8 @@ namespace TestApp.BL.Model
         /// </summary>
         public virtual User User { get; set; }
         #endregion
+        public Exercise() { }
+
         public Exercise(DateTime start, DateTime finish, Activity activity, User user)
         {
             //TODO Check

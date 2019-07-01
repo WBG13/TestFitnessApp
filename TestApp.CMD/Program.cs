@@ -28,7 +28,7 @@ namespace TestApp.CMD
                 var birthDate = ParseDateTime("Дата рождения");
                 var weight = ParseDouble("вес");
                 var height = ParseDouble("рост");
-                userController.SetNewUserData(name, gender, birthDate, weight, height);
+                userController.SetNewUserData(gender, birthDate, weight, height);
 
             }
 

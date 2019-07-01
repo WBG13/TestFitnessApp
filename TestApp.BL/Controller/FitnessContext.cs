@@ -6,10 +6,7 @@ namespace TestApp.BL.Controller
 {
     class FitnessContext : DbContext
     {
-        public FitnessContext() : base("DBConnection")
-        {
-
-        }
+        public FitnessContext() : base("DbConnection"){ }
 
         public DbSet<Activity> Activities { get; set; }
         public DbSet<Eating> Eatings { get; set; }

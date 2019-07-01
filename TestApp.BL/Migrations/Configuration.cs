@@ -9,7 +9,8 @@ namespace TestApp.BL.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            ContextKey = "TestApp.BL.Controller.FitnessContext";
         }
 
         protected override void Seed(TestApp.BL.Controller.FitnessContext context)
