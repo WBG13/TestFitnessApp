@@ -28,8 +28,8 @@ namespace TestApp.CMD
                 var birthDate = ParseDateTime("Дата рождения");
                 var weight = ParseDouble("вес");
                 var height = ParseDouble("рост");
-                userController.SetNewUserData(gender, birthDate, weight, height);
 
+                userController.SetNewUserData(gender, birthDate, weight, height);
             }
 
             Console.WriteLine(userController.CurrentUser);
@@ -90,7 +90,6 @@ namespace TestApp.CMD
             var prots = ParseDouble("протеины");
             var fats = ParseDouble("жиры");
             var carbs = ParseDouble("углеводы");
-
             var weight = ParseDouble("вес порции");
             Food product = new Food(productName, calories, prots, fats, carbs);
 

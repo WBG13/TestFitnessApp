@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 using TestApp.BL.Model;
 
 namespace TestApp.BL.Controller
@@ -53,37 +49,12 @@ namespace TestApp.BL.Controller
         private List<Food> GetAllFoods()
         {
             return Load<Food>() ?? new List<Food>();
-            //var formatter = new BinaryFormatter();
-            //try
-            //{
-            //    using (var fs = new FileStream("users.dat", FileMode.Open, FileAccess.Read))//, FileMode.OpenOrCreate))
-            //    {
-            //        try
-            //        {
-            //            if (formatter.Deserialize(fs) is List<Food> food) //проблема дисереализации данных, необходим корректный вывод List<User> users
-            //            {
-            //                return food; //(List<User>)formatter.Deserialize(fs);
-            //            }
-            //            else
-            //           {
-            //               return new List<Food>();
-            //            }
-            //        }
-            //       catch (System.Runtime.Serialization.SerializationException e)
-            //        {
-            //            return new List<Food>();
-            //         }
-            //    }
-            // }
-            //  catch (System.IO.FileNotFoundException e) { return new List<Food>(); }
         }
 
         private void Save()
         {
             Save(Foods);
             Save(new List<Eating>() { Eating});
-            //Save(FOOD_FILE_NAME, Foods);
-            //Save(EATING_FILE_NAME, Eating);
         }
     }
 }

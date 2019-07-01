@@ -1,5 +1,4 @@
-﻿
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using TestApp.BL.Model;
 
 namespace TestApp.BL.Controller

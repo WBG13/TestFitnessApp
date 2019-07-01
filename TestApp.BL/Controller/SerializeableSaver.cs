@@ -24,7 +24,7 @@ namespace TestApp.BL.Controller
             {
                 try
                 {
-                    if (fs.Length > 0 && formatter.Deserialize(fs) is List<T> items) //проблема дисереализации данных, необходим корректный вывод List<User> users
+                    if (fs.Length > 0 && formatter.Deserialize(fs) is List<T> items)
                     {
                         return items;
                     }

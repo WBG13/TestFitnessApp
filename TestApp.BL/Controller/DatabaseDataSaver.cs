@@ -1,6 +1,4 @@
-﻿using System;
-using TestApp.BL.Model;
-using System.Linq;
+﻿using System.Linq;
 using System.Collections.Generic;
 
 namespace TestApp.BL.Controller
@@ -11,8 +9,7 @@ namespace TestApp.BL.Controller
         {
             using (var db = new FitnessContext())
             {
-                var result = db.Set<T>().Where(t => true).ToList();
-                return result;
+                return db.Set<T>().Where(t => true).ToList();
             }
         }
 
