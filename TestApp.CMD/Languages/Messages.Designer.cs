@@ -61,20 +61,20 @@ namespace TestApp.CMD.Languages {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Введите ваше имя:.
-        /// </summary>
-        internal static string EnterName {
-            get {
-                return ResourceManager.GetString("EnterName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Вас приветствует программа TestFitness.
+        ///   Ищет локализованную строку, похожую на Вас приветствует программа TestFitness!.
         /// </summary>
         internal static string Hello {
             get {
                 return ResourceManager.GetString("Hello", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на имя.
+        /// </summary>
+        internal static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
             }
         }
     }

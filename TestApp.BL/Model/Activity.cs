@@ -27,6 +27,11 @@ namespace TestApp.BL.Model
 
         public Activity() { }
 
+        /// <summary>
+        /// Создание упражнения.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="caloriesPerMinute"></param>
         public Activity(string name, double caloriesPerMinute)
         {
             Name = name;

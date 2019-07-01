@@ -36,7 +36,13 @@ namespace TestApp.BL.Model
         public virtual User User { get; set; }
         #endregion
         public Exercise() { }
-
+        /// <summary>
+        /// Создание упражнения с параметрами.
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="finish"></param>
+        /// <param name="activity"></param>
+        /// <param name="user"></param>
         public Exercise(DateTime start, DateTime finish, Activity activity, User user)
         {
             //TODO Check

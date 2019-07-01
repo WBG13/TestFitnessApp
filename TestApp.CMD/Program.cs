@@ -10,24 +10,27 @@ namespace TestApp.CMD
     {
         public static void Main(string[] args)
         {
-            var culture = CultureInfo.CreateSpecificCulture("ru-ru");
-            var culture2 = CultureInfo.CreateSpecificCulture("en-us");
+            var parser = new DataParser();
+            CultureInfo culture = parser.ParseCulture();
             var resourceManager = new ResourceManager("TestApp.CMD.Languages.Messages", typeof(Program).Assembly);
 
-            Console.WriteLine(resourceManager.GetString("Hello", culture2));
+            Console.WriteLine(resourceManager.GetString("Hello", culture));
+            //Console.WriteLine(resourceManager.GetString("EnterName", culture));
 
-            Console.WriteLine(resourceManager.GetString("EnterName", culture));
-            var name = Console.ReadLine();
+            //var name = Console.ReadLine();
+
+
+            var name = parser.ParseString(resourceManager.GetString("Name", culture));
             var userController = new UserController(name);
             var eatingController = new EatingController(userController.CurrentUser);
             var exerciseController = new ExerciseController(userController.CurrentUser);
+
             if (userController.IsNewUser)
             {
-                Console.WriteLine("Введите пол:");
-                var gender = Console.ReadLine();
-                var birthDate = ParseDateTime("Дата рождения");
-                var weight = ParseDouble("вес");
-                var height = ParseDouble("рост");
+                var gender = parser.ParseString("пол");
+                var birthDate = parser.ParseDateTime("дату рождения");
+                var weight = parser.ParseDouble("вес");
+                var height = parser.ParseDouble("рост");
 
                 userController.SetNewUserData(gender, birthDate, weight, height);
             }
@@ -45,7 +48,7 @@ namespace TestApp.CMD
                 switch (key.Key)
                 {
                     case ConsoleKey.E:
-                        var foods = EnterEating();
+                        var foods = EnterEating(parser);
                         eatingController.Add(foods.Food, foods.Weight);
 
                         foreach (var item in eatingController.Eating.Foods)
@@ -54,7 +57,7 @@ namespace TestApp.CMD
                         }
                         break;
                     case ConsoleKey.A:
-                        var exe = EnterExercise();
+                        var exe = EnterExercise(parser);
                         exerciseController.Add(exe.Activity, exe.Begin, exe.End);
                         foreach(var item in exerciseController.Exercises)
                         {
@@ -70,62 +73,27 @@ namespace TestApp.CMD
             }
         }
 
-        private static (DateTime Begin, DateTime End, Activity Activity) EnterExercise()
+        private static (DateTime Begin, DateTime End, Activity Activity) EnterExercise(DataParser parser)
         {
-            Console.WriteLine("Введите название упражнения:");
-            var name = Console.ReadLine();
-            var energy = ParseDouble("расход энергии в минуту");
-            var begin = ParseDateTime("начало упражнений");
-            var finish = ParseDateTime("завершение упражнения");
+            var name = parser.ParseString("название упражнения");
+            var energy = parser.ParseDouble("расход энергии в минуту");
+            var begin = parser.ParseDateTime("начало упражнений");
+            var finish = parser.ParseDateTime("завершение упражнения");
             var activity = new Activity(name, energy);
             return (begin, finish, activity);
         }
 
-        private static (Food Food, double Weight) EnterEating()
+        private static (Food Food, double Weight) EnterEating(DataParser parser)
         {
-            Console.WriteLine("Введите имя продукта:");
-            var productName = Console.ReadLine();
-
-            var calories = ParseDouble("калории");
-            var prots = ParseDouble("протеины");
-            var fats = ParseDouble("жиры");
-            var carbs = ParseDouble("углеводы");
-            var weight = ParseDouble("вес порции");
+            var productName = parser.ParseString("имя продукта");
+            var calories = parser.ParseDouble("калории");
+            var prots = parser.ParseDouble("протеины");
+            var fats = parser.ParseDouble("жиры");
+            var carbs = parser.ParseDouble("углеводы");
+            var weight = parser.ParseDouble("вес порции");
             Food product = new Food(productName, calories, prots, fats, carbs);
 
             return (Food: product, Weight: weight); 
-        }
-
-        private static DateTime ParseDateTime(string value) {
-            while (true)
-            {
-                Console.WriteLine($"Введите {value} (dd.mm.yyyy):");
-                if (DateTime.TryParse(Console.ReadLine(), out DateTime birthDate))
-                {
-                    return birthDate;
-                }
-                else
-                {
-                    Console.WriteLine($"Не верный формат {value}.");
-                }
-            }
-        }
-
-        private static double ParseDouble(string name)
-        {
-            double value;
-            while (true)
-            {
-                Console.WriteLine($"Введите {name}:");
-                if (double.TryParse(Console.ReadLine(), out value))
-                {
-                    return value;
-                }
-                else
-                {
-                    Console.WriteLine($"Не верный формат {name}:");
-                }
-            }
         }
     }
 }

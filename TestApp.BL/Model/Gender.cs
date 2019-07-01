@@ -18,12 +18,11 @@ namespace TestApp.BL.Model
         ///</summary>
         public string Name { get; set; }
         #endregion
+        public Gender() { }
         ///<summary>
         ///Создать новый пол.
         ///</summary>
         ///<param name="name">Имя пола</param>
-        public Gender() { }
-
         public Gender(string name)
         {
             if (string.IsNullOrWhiteSpace(name))

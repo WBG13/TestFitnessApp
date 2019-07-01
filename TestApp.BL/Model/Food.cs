@@ -32,9 +32,19 @@ namespace TestApp.BL.Model
         public double Calories { get; set; }
         #endregion
         public Food() { }
-
+        /// <summary>
+        /// Создание еды на основе имени с нудевыми параметрами.
+        /// </summary>
+        /// <param name="name"></param>
         public Food(string name) : this (name, 0, 0, 0, 0){}
-
+        /// <summary>
+        /// Создание новой еды с параметрами.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="calories"></param>
+        /// <param name="proteins"></param>
+        /// <param name="fats"></param>
+        /// <param name="carbogydrates"></param>
         public Food(string name, double calories, double proteins, double fats, double carbogydrates)
         {
             //TODO:Проверка

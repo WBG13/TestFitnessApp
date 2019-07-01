@@ -30,13 +30,22 @@ namespace TestApp.BL.Model
         #endregion
         public Eating() { }
 
+        /// <summary>
+        /// Создание еды для определенного пользователя.
+        /// </summary>
+        /// <param name="user"></param>
         public Eating(User user)
         {
-            User = user ?? throw new ArgumentNullException("Пользователь не может быть null", nameof(user)); // провекрка на null;
+            User = user ?? throw new ArgumentNullException("Пользователь не может быть null", nameof(user));
             Moment = DateTime.UtcNow;
             Foods = new Dictionary<Food, double>();
         }
 
+        /// <summary>
+        /// Добавление еды с определенными параметрами.
+        /// </summary>
+        /// <param name="food"></param>
+        /// <param name="weight"></param>
         public void Add(Food food, double weight)
         {
             var foodProduct = Foods.Keys.FirstOrDefault(f => f.Name.Equals(food.Name));
