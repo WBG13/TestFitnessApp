@@ -36,7 +36,7 @@ namespace TestApp.BL.Model
         /// <param name="user"></param>
         public Eating(User user)
         {
-            User = user ?? throw new ArgumentNullException("Пользователь не может быть null", nameof(user));
+            User = user;
             Moment = DateTime.UtcNow;
             Foods = new Dictionary<Food, double>();
         }

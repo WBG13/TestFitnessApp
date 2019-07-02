@@ -117,10 +117,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BeginningOfExercises" xml:space="preserve">
+    <value>the beginning of the exercises</value>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>birth date</value>
+  </data>
+  <data name="Calories" xml:space="preserve">
+    <value>calories</value>
+  </data>
+  <data name="CompletionOfExercise" xml:space="preserve">
+    <value>completion of the exercise</value>
+  </data>
+  <data name="EnterMealTime" xml:space="preserve">
+    <value>enter meal time.</value>
+  </data>
+  <data name="ExerciseName" xml:space="preserve">
+    <value>exercise name</value>
+  </data>
+  <data name="Fats" xml:space="preserve">
+    <value>fats</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>gender</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>height</value>
+  </data>
   <data name="Hello" xml:space="preserve">
     <value>Greatings! This is a TestFitness application!</value>
   </data>
+  <data name="IncorrectFormat" xml:space="preserve">
+    <value>Incorrect format</value>
+  </data>
+  <data name="Input" xml:space="preserve">
+    <value>Input</value>
+  </data>
+  <data name="IntroduceAnExercise" xml:space="preserve">
+    <value>introduce an exercise</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>name</value>
+  </data>
+  <data name="PortionWeight" xml:space="preserve">
+    <value>portion weight</value>
+  </data>
+  <data name="PowerConsumptionPerMinute" xml:space="preserve">
+    <value>power consumption per minute</value>
+  </data>
+  <data name="PressAnyButton" xml:space="preserve">
+    <value>Press any button for continue.</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>product name</value>
+  </data>
+  <data name="Proteins" xml:space="preserve">
+    <value>proteins</value>
+  </data>
+  <data name="Quit" xml:space="preserve">
+    <value>quit</value>
+  </data>
+  <data name="ShortInput" xml:space="preserve">
+    <value>Short input. Inputed</value>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>weight</value>
+  </data>
+  <data name="WhatYouWantToDo" xml:space="preserve">
+    <value>What you want to do?</value>
+  </data>
+  <data name="Сarbohydrates" xml:space="preserve">
+    <value>сarbohydrates</value>
   </data>
 </root>

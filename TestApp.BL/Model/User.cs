@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Resources;
 
 namespace TestApp.BL.Model
 {
@@ -84,15 +85,12 @@ namespace TestApp.BL.Model
         public User(string userName)
         {
             if (string.IsNullOrWhiteSpace(userName))
-            {
-                throw new ArgumentNullException("Имя пользователя не может быть пустым или null.", nameof(userName));
-            }
-            this.Name = userName;
+            Name = userName;
         }
 
         public override string ToString()
         {
-            return Name;
+            return Name + " " + Age;
         }
     }
 }

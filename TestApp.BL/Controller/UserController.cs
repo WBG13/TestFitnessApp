@@ -29,11 +29,6 @@ namespace TestApp.BL.Controller
         /// <param name="user"></param>
         public UserController(string userName)
         {
-            if(string.IsNullOrWhiteSpace(userName))
-            {
-                throw new ArgumentException("Имя пользователя не может быть пустым", nameof(userName));
-            }
-
             Users = GetUsersDate();
 
             CurrentUser = Users.SingleOrDefault(u => u.Name == userName);

@@ -45,7 +45,6 @@ namespace TestApp.BL.Model
         /// <param name="user"></param>
         public Exercise(DateTime start, DateTime finish, Activity activity, User user)
         {
-            //TODO Check
             Start = start;
             Finish = finish;
             Activity = activity;

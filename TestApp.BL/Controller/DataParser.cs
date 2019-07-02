@@ -5,30 +5,38 @@ namespace TestApp.BL.Controller
 {
     public class DataParser
     {
+        private LanguageFormatter LanguageFormatter { get; set; }
+
+        public DataParser() { }
+
+        public void SetLanguageFormatter(LanguageFormatter languageFormatter)
+        {
+            LanguageFormatter = languageFormatter;
+        }
         public string ParseString(string value)
         {
             while (true)
             {
-                Console.WriteLine($"Введите {value}:");
+                Console.WriteLine($"{LanguageFormatter.BuildString("Input", value)}:");
                 var inputedValue = Console.ReadLine();
-                if (inputedValue.Length > 1 || inputedValue != null)
-
+                if (inputedValue.Length > 1 && inputedValue != null)
                 {
                     return inputedValue;
                 }
                 else
                 {
                     Console.Clear();
-                    Console.WriteLine($"Введенные данные не могут быть короче двух символов или равны null. Введено {value}.");
+                    Console.WriteLine($"{LanguageFormatter.BuildString("ShortInput", value)}.");
                 }
             }
         }
 
         public DateTime ParseDateTime(string value)
         {
+            value = LanguageFormatter.Text(value);
             while (true)
             {
-                Console.WriteLine($"Введите {value} (dd.mm.yyyy):");
+                Console.WriteLine($"{LanguageFormatter.BuildString("Input", value)} (dd.mm.yyyy):");
                 if (DateTime.TryParse(Console.ReadLine(), out DateTime birthDate))
                 {
                     return birthDate;
@@ -36,17 +44,18 @@ namespace TestApp.BL.Controller
                 else
                 {
                     Console.Clear();
-                    Console.WriteLine($"Не верный формат {value}.");
+                    Console.WriteLine($"{LanguageFormatter.BuildString("IncorrectFormat", value)}.");
                 }
             }
         }
 
         public double ParseDouble(string name)
         {
+            name = LanguageFormatter.Text(name);
             double value;
             while (true)
             {
-                Console.WriteLine($"Введите {name}:");
+                Console.WriteLine($"{LanguageFormatter.BuildString("Input", name)} :");
                 if (double.TryParse(Console.ReadLine(), out value))
                 {
                     return value;
@@ -54,7 +63,7 @@ namespace TestApp.BL.Controller
                 else
                 {
                     Console.Clear();
-                    Console.WriteLine($"Не верный формат {name}:");
+                    Console.WriteLine($"{LanguageFormatter.BuildString("IncorrectFormat", name)}:"); 
                 }
             }
         }
@@ -76,7 +85,7 @@ namespace TestApp.BL.Controller
                 else
                 {
                     Console.Clear();
-                    Console.WriteLine($"Не верный ввод:");
+                    Console.WriteLine($"Invalid input");
                 }
             }
         }

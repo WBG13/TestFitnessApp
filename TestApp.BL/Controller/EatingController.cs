@@ -18,10 +18,7 @@ namespace TestApp.BL.Controller
 
         public EatingController(User user)
         {
-            this.user = user ?? throw new ArgumentNullException("Пользователь не может быть указан null", nameof(user));
-
             Foods = GetAllFoods();
-
             Eating = GetEating();
         }
 

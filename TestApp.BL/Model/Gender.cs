@@ -25,11 +25,6 @@ namespace TestApp.BL.Model
         ///<param name="name">Имя пола</param>
         public Gender(string name)
         {
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                throw new ArgumentException("Имя поля не может быть пустым или null.", nameof(name));
-            }
-
             Name = name;
         }
 

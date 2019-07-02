@@ -61,6 +61,87 @@ namespace TestApp.CMD.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на начало упражнений.
+        /// </summary>
+        internal static string BeginningOfExercises {
+            get {
+                return ResourceManager.GetString("BeginningOfExercises", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на дату рождения.
+        /// </summary>
+        internal static string BirthDate {
+            get {
+                return ResourceManager.GetString("BirthDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на калории.
+        /// </summary>
+        internal static string Calories {
+            get {
+                return ResourceManager.GetString("Calories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на завершение упражнения.
+        /// </summary>
+        internal static string CompletionOfExercise {
+            get {
+                return ResourceManager.GetString("CompletionOfExercise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ввессти время приема пищи..
+        /// </summary>
+        internal static string EnterMealTime {
+            get {
+                return ResourceManager.GetString("EnterMealTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на название упражнения.
+        /// </summary>
+        internal static string ExerciseName {
+            get {
+                return ResourceManager.GetString("ExerciseName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на жиры.
+        /// </summary>
+        internal static string Fats {
+            get {
+                return ResourceManager.GetString("Fats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на пол.
+        /// </summary>
+        internal static string Gender {
+            get {
+                return ResourceManager.GetString("Gender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на рост.
+        /// </summary>
+        internal static string Height {
+            get {
+                return ResourceManager.GetString("Height", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вас приветствует программа TestFitness!.
         /// </summary>
         internal static string Hello {
@@ -70,11 +151,128 @@ namespace TestApp.CMD.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Неверный формат.
+        /// </summary>
+        internal static string IncorrectFormat {
+            get {
+                return ResourceManager.GetString("IncorrectFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Введите .
+        /// </summary>
+        internal static string Input {
+            get {
+                return ResourceManager.GetString("Input", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на введите упражнение.
+        /// </summary>
+        internal static string IntroduceAnExercise {
+            get {
+                return ResourceManager.GetString("IntroduceAnExercise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на имя.
         /// </summary>
         internal static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вес порции.
+        /// </summary>
+        internal static string PortionWeight {
+            get {
+                return ResourceManager.GetString("PortionWeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на расход энергии в минуту.
+        /// </summary>
+        internal static string PowerConsumptionPerMinute {
+            get {
+                return ResourceManager.GetString("PowerConsumptionPerMinute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Для продолжения нажмите на любую кнопку..
+        /// </summary>
+        internal static string PressAnyButton {
+            get {
+                return ResourceManager.GetString("PressAnyButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на имя продукта.
+        /// </summary>
+        internal static string ProductName {
+            get {
+                return ResourceManager.GetString("ProductName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на протеины.
+        /// </summary>
+        internal static string Proteins {
+            get {
+                return ResourceManager.GetString("Proteins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на для выхода из порграммы.
+        /// </summary>
+        internal static string Quit {
+            get {
+                return ResourceManager.GetString("Quit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Введенные данные не могут быть короче одного символа или равны null. Введено.
+        /// </summary>
+        internal static string ShortInput {
+            get {
+                return ResourceManager.GetString("ShortInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на вес.
+        /// </summary>
+        internal static string Weight {
+            get {
+                return ResourceManager.GetString("Weight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Что вы хотети сделать?.
+        /// </summary>
+        internal static string WhatYouWantToDo {
+            get {
+                return ResourceManager.GetString("WhatYouWantToDo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на углеводы.
+        /// </summary>
+        internal static string Сarbohydrates {
+            get {
+                return ResourceManager.GetString("Сarbohydrates", resourceCulture);
             }
         }
     }
