@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using TestApp.BL.Model;
 
 namespace TestApp.BL.Controller
 {
@@ -13,27 +14,26 @@ namespace TestApp.BL.Controller
         {
             LanguageFormatter = languageFormatter;
         }
+
         public string ParseString(string value)
         {
             while (true)
             {
                 Console.WriteLine($"{LanguageFormatter.BuildString("Input", value)}:");
                 var inputedValue = Console.ReadLine();
-                if (inputedValue.Length > 1 && inputedValue != null)
+                if (inputedValue.Length > 0 && inputedValue != null)
                 {
                     return inputedValue;
                 }
                 else
                 {
-                    Console.Clear();
-                    Console.WriteLine($"{LanguageFormatter.BuildString("ShortInput", value)}.");
+                    Console.WriteLine($"{LanguageFormatter.Text("ShortInput")}.");
                 }
             }
         }
 
         public DateTime ParseDateTime(string value)
         {
-            value = LanguageFormatter.Text(value);
             while (true)
             {
                 Console.WriteLine($"{LanguageFormatter.BuildString("Input", value)} (dd.mm.yyyy):");
@@ -43,15 +43,13 @@ namespace TestApp.BL.Controller
                 }
                 else
                 {
-                    Console.Clear();
-                    Console.WriteLine($"{LanguageFormatter.BuildString("IncorrectFormat", value)}.");
+                    Console.WriteLine($"{LanguageFormatter.Text("IncorrectFormat")}.");
                 }
             }
         }
 
         public double ParseDouble(string name)
         {
-            name = LanguageFormatter.Text(name);
             double value;
             while (true)
             {
@@ -62,8 +60,7 @@ namespace TestApp.BL.Controller
                 }
                 else
                 {
-                    Console.Clear();
-                    Console.WriteLine($"{LanguageFormatter.BuildString("IncorrectFormat", name)}:"); 
+                    Console.WriteLine($"{LanguageFormatter.Text("IncorrectFormat")}:"); 
                 }
             }
         }
@@ -84,7 +81,23 @@ namespace TestApp.BL.Controller
                 }
                 else
                 {
-                    Console.Clear();
+                    Console.WriteLine($"Invalid input");
+                }
+            }
+        }
+
+        public Gender ParseGender()
+        {
+            while (true)
+            {
+                Console.WriteLine(($"{LanguageFormatter.Text("InputGender")}"));
+                string value = LanguageFormatter.Text(Console.ReadLine());
+                if (value == "M" || value == "W")
+                {
+                    return new Gender(value);
+                }
+                else
+                {
                     Console.WriteLine($"Invalid input");
                 }
             }

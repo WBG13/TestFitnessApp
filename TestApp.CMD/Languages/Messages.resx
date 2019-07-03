@@ -130,7 +130,7 @@
     <value>завершение упражнения</value>
   </data>
   <data name="EnterMealTime" xml:space="preserve">
-    <value>ввессти время приема пищи.</value>
+    <value>ввессти время приема пищи</value>
   </data>
   <data name="ExerciseName" xml:space="preserve">
     <value>название упражнения</value>
@@ -148,13 +148,19 @@
     <value>Вас приветствует программа TestFitness!</value>
   </data>
   <data name="IncorrectFormat" xml:space="preserve">
-    <value>Неверный формат</value>
+    <value>Неверно введенные данные</value>
   </data>
   <data name="Input" xml:space="preserve">
     <value>Введите </value>
   </data>
+  <data name="InputGender" xml:space="preserve">
+    <value>Введите первую букву вашего пола:</value>
+  </data>
   <data name="IntroduceAnExercise" xml:space="preserve">
     <value>введите упражнение</value>
+  </data>
+  <data name="m" xml:space="preserve">
+    <value>M</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>имя</value>
@@ -180,11 +186,20 @@
   <data name="ShortInput" xml:space="preserve">
     <value>Введенные данные не могут быть короче одного символа или равны null. Введено</value>
   </data>
+  <data name="w" xml:space="preserve">
+    <value>W</value>
+  </data>
   <data name="Weight" xml:space="preserve">
     <value>вес</value>
   </data>
   <data name="WhatYouWantToDo" xml:space="preserve">
     <value>Что вы хотети сделать?</value>
+  </data>
+  <data name="ж" xml:space="preserve">
+    <value>W</value>
+  </data>
+  <data name="м" xml:space="preserve">
+    <value>M</value>
   </data>
   <data name="Сarbohydrates" xml:space="preserve">
     <value>углеводы</value>

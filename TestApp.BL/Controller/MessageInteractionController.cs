@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using System.Resources;
 using TestApp.BL.Model;
 
@@ -31,6 +30,7 @@ namespace TestApp.BL.Controller
             if (userController.IsNewUser)
             {
                 AddNewUser();
+                userController.Save();
             }
         }
 
@@ -42,6 +42,8 @@ namespace TestApp.BL.Controller
                 Console.WriteLine(languageFormatter.Text("WhatYouWantToDo"));
                 Console.WriteLine($"E - {languageFormatter.Text(("EnterMealTime"))}.");
                 Console.WriteLine($"A - {languageFormatter.Text(("IntroduceAnExercise"))}.");
+                Console.WriteLine($"F - show all foods");
+                Console.WriteLine($"G - show all exercise.");
                 Console.WriteLine($"Q - {languageFormatter.Text(("Quit"))}.");
                 var key = Console.ReadKey();
 
@@ -59,6 +61,20 @@ namespace TestApp.BL.Controller
                     case ConsoleKey.A:
                         var exe = EnterExercise();
                         exerciseController.Add(exe.Activity, exe.Begin, exe.End);
+                        foreach (var item in exerciseController.Exercises)
+                        {
+                            Console.WriteLine($"\t{item.Activity} from {item.Start.ToShortTimeString()} to {item.Finish.ToShortTimeString()}");
+                        }
+                        break;
+                    case ConsoleKey.F:
+                        Console.Clear();
+                        foreach (var item in exerciseController.Exercises)
+                        {
+                            Console.WriteLine($"\t{item.Activity} from {item.Start.ToShortTimeString()} to {item.Finish.ToShortTimeString()}");
+                        }
+                        break;
+                    case ConsoleKey.G:
+                        Console.Clear();
                         foreach (var item in exerciseController.Exercises)
                         {
                             Console.WriteLine($"\t{item.Activity} from {item.Start.ToShortTimeString()} to {item.Finish.ToShortTimeString()}");
@@ -108,7 +124,7 @@ namespace TestApp.BL.Controller
 
         private void AddNewUser()
         {
-            var gender = parser.ParseString("Gender");
+            var gender = parser.ParseGender();
             var birthDate = parser.ParseDateTime("BirthDate");
             var weight = parser.ParseDouble("Weight");
             var height = parser.ParseDouble("Height");

@@ -130,10 +130,13 @@
     <value>completion of the exercise</value>
   </data>
   <data name="EnterMealTime" xml:space="preserve">
-    <value>enter meal time.</value>
+    <value>enter meal time</value>
   </data>
   <data name="ExerciseName" xml:space="preserve">
     <value>exercise name</value>
+  </data>
+  <data name="f" xml:space="preserve">
+    <value>W</value>
   </data>
   <data name="Fats" xml:space="preserve">
     <value>fats</value>
@@ -148,13 +151,19 @@
     <value>Greatings! This is a TestFitness application!</value>
   </data>
   <data name="IncorrectFormat" xml:space="preserve">
-    <value>Incorrect format</value>
+    <value>Incorrect input data</value>
   </data>
   <data name="Input" xml:space="preserve">
     <value>Input</value>
   </data>
+  <data name="InputGender" xml:space="preserve">
+    <value>Input first character if your gender:</value>
+  </data>
   <data name="IntroduceAnExercise" xml:space="preserve">
     <value>introduce an exercise</value>
+  </data>
+  <data name="m" xml:space="preserve">
+    <value>M</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>name</value>
@@ -180,11 +189,20 @@
   <data name="ShortInput" xml:space="preserve">
     <value>Short input. Inputed</value>
   </data>
+  <data name="w" xml:space="preserve">
+    <value>W</value>
+  </data>
   <data name="Weight" xml:space="preserve">
     <value>weight</value>
   </data>
   <data name="WhatYouWantToDo" xml:space="preserve">
     <value>What you want to do?</value>
+  </data>
+  <data name="ж" xml:space="preserve">
+    <value>W</value>
+  </data>
+  <data name="м" xml:space="preserve">
+    <value>M</value>
   </data>
   <data name="Сarbohydrates" xml:space="preserve">
     <value>сarbohydrates</value>

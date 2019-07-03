@@ -49,10 +49,10 @@ namespace TestApp.BL.Controller
             return Load<User>() ?? new List<User>();
         }
 
-        public void SetNewUserData(string genderName, DateTime birthDate, double weight = 1, double height = 1)
+        public void SetNewUserData(Gender gender, DateTime birthDate, double weight = 1, double height = 1)
         {
             //TODO: Проверка 
-            CurrentUser.Gender = new Gender(genderName);
+            CurrentUser.Gender = gender;
             CurrentUser.BirthDate = birthDate;
             CurrentUser.Weight = weight;
             CurrentUser.Height = height;

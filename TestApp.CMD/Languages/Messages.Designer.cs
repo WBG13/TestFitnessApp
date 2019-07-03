@@ -97,7 +97,7 @@ namespace TestApp.CMD.Languages {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на ввессти время приема пищи..
+        ///   Ищет локализованную строку, похожую на ввессти время приема пищи.
         /// </summary>
         internal static string EnterMealTime {
             get {
@@ -151,7 +151,7 @@ namespace TestApp.CMD.Languages {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Неверный формат.
+        ///   Ищет локализованную строку, похожую на Неверно введенные данные.
         /// </summary>
         internal static string IncorrectFormat {
             get {
@@ -169,11 +169,29 @@ namespace TestApp.CMD.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Введите первую букву вашего пола:.
+        /// </summary>
+        internal static string InputGender {
+            get {
+                return ResourceManager.GetString("InputGender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на введите упражнение.
         /// </summary>
         internal static string IntroduceAnExercise {
             get {
                 return ResourceManager.GetString("IntroduceAnExercise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на M.
+        /// </summary>
+        internal static string m {
+            get {
+                return ResourceManager.GetString("m", resourceCulture);
             }
         }
         
@@ -250,6 +268,15 @@ namespace TestApp.CMD.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на W.
+        /// </summary>
+        internal static string w {
+            get {
+                return ResourceManager.GetString("w", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на вес.
         /// </summary>
         internal static string Weight {
@@ -264,6 +291,24 @@ namespace TestApp.CMD.Languages {
         internal static string WhatYouWantToDo {
             get {
                 return ResourceManager.GetString("WhatYouWantToDo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на W.
+        /// </summary>
+        internal static string ж {
+            get {
+                return ResourceManager.GetString("ж", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на M.
+        /// </summary>
+        internal static string м {
+            get {
+                return ResourceManager.GetString("м", resourceCulture);
             }
         }
         
