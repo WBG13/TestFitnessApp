@@ -21,13 +21,13 @@ namespace TestApp.BL.Controller
             {
                 Console.WriteLine($"{LanguageFormatter.BuildString("Input", value)}:");
                 var inputedValue = Console.ReadLine();
-                if (inputedValue.Length > 0 && inputedValue != null)
+                if (string.IsNullOrWhiteSpace(inputedValue))
                 {
-                    return inputedValue;
+                    Console.WriteLine($"{LanguageFormatter.Text("ShortInput")}.");
                 }
                 else
                 {
-                    Console.WriteLine($"{LanguageFormatter.Text("ShortInput")}.");
+                    return inputedValue;
                 }
             }
         }

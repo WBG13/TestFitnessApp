@@ -59,6 +59,5 @@ namespace TestApp.BL.Model
                 Foods[foodProduct] += 1;
             }
         }
-
     }
 }

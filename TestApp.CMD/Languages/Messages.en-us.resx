@@ -157,7 +157,7 @@
     <value>Input</value>
   </data>
   <data name="InputGender" xml:space="preserve">
-    <value>Input first character if your gender:</value>
+    <value>Input first character of your gender:</value>
   </data>
   <data name="IntroduceAnExercise" xml:space="preserve">
     <value>introduce an exercise</value>

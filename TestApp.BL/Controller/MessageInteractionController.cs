@@ -68,9 +68,16 @@ namespace TestApp.BL.Controller
                         break;
                     case ConsoleKey.F:
                         Console.Clear();
-                        foreach (var item in exerciseController.Exercises)
+                        if (exerciseController.Exercises.Count != 0)
                         {
-                            Console.WriteLine($"\t{item.Activity} from {item.Start.ToShortTimeString()} to {item.Finish.ToShortTimeString()}");
+                            foreach (var item in exerciseController.Exercises)
+                            {
+                                Console.WriteLine($"\t{item.Activity} from {item.Start.ToShortTimeString()} to {item.Finish.ToShortTimeString()}");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Exercises list are empty");
                         }
                         break;
                     case ConsoleKey.G:
@@ -93,9 +100,8 @@ namespace TestApp.BL.Controller
         {
             InitialiseData(resourceManager);
             Console.Clear();
-            Console.WriteLine(userController.CurrentUser);
-            Console.WriteLine(languageFormatter.Text("PressAnyButton"));
-            Console.ReadLine();
+            //Console.WriteLine(languageFormatter.Text("PressAnyButton"));
+            //Console.ReadLine();
             InputCommand();
         }
 

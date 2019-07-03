@@ -10,7 +10,6 @@ namespace TestApp.BL.Controller
     /// </summary>
     public class UserController : ControllerBase
     {
-        //private const string USERS_FILE_NAME = "users.dat";
         /// <summary>
         /// Пользователи приложения.
         /// </summary>
@@ -30,10 +29,9 @@ namespace TestApp.BL.Controller
         public UserController(string userName)
         {
             Users = GetUsersDate();
+            CurrentUser = Users.Find(u => u.Name == userName);
 
-            CurrentUser = Users.SingleOrDefault(u => u.Name == userName);
-
-            if(CurrentUser == null)
+            if (CurrentUser == null)
             {
                 CurrentUser = new User(userName);
                 Users.Add(CurrentUser);
@@ -51,7 +49,6 @@ namespace TestApp.BL.Controller
 
         public void SetNewUserData(Gender gender, DateTime birthDate, double weight = 1, double height = 1)
         {
-            //TODO: Проверка 
             CurrentUser.Gender = gender;
             CurrentUser.BirthDate = birthDate;
             CurrentUser.Weight = weight;

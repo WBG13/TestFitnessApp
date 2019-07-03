@@ -6,8 +6,6 @@ namespace TestApp.BL.Controller
 {
     public class EatingController : ControllerBase
     {
-        //private const string FOOD_FILE_NAME = "food.dat";
-        //private const string EATING_FILE_NAME = "eating.dat";
 
         private readonly User user;
 

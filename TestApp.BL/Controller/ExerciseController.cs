@@ -8,8 +8,6 @@ namespace TestApp.BL.Controller
     public class ExerciseController : ControllerBase
     {
         private readonly User user;
-        //private const string EXERCISE_FILE_NAME = "exercise.dat"; 
-        //private const string ACTIVITIES_FILE_NAME = "activities.dat";
 
         public List<Exercise> Exercises { get; set; }
 

@@ -12,7 +12,7 @@ namespace TestApp.BL.Model
         /// </summary>
         public int Id { get; set; }
         /// <summary>
-        /// Название упражнения.
+        /// Название деятельности.
         /// </summary>
         public string Name { get; set; }
         /// <summary>
@@ -20,7 +20,7 @@ namespace TestApp.BL.Model
         /// </summary>
         public virtual ICollection<Exercise> Exercises { get; set; }
         /// <summary>
-        /// Количество сжигаемых калорий в минуту.
+        /// Количество калорий расходуемых в минуту.
         /// </summary>
         public double CaloriesPerMinute { get; set; }
         #endregion

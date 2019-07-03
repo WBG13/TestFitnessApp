@@ -83,13 +83,12 @@ namespace TestApp.BL.Model
 
         public User(string userName)
         {
-            if (string.IsNullOrWhiteSpace(userName))
             Name = userName;
         }
 
         public override string ToString()
         {
-            return Name + " " + Age;
+            return Name;
         }
     }
 }
